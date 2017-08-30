@@ -1,0 +1,68 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+*::before,
+*::after{ box-sizing: border-box}
+
+@keyframes circle{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg)
+    }
+}
+
+
+.page{
+    display: flex;
+    flex-direction:column;
+    height: 100vh;
+    background:transparent url(../img/jzw-bg.jpg);
+    background-size: cover;
+}
+
+.disc-container{
+    position: relative
+
+}
+.disc-container .pointer{
+    width:24vw;
+    position: absolute;
+    left: 45vw;
+    z-index: 99;
+}
+.disc-container .disc{
+    display: flex;
+    /* 弹性盒子元素将向行中间位置对齐*/
+    justify-content: center;
+    /* align-items 属性定义flex子项在flex容器的当前行的侧轴（纵轴）方向上的对齐方式  
+    居中对齐弹性盒的各项 <div> 元素： */
+    align-items: center;
+    margin-top:18vw;
+}
+
+.disc-container .ring{
+    width:72vw;
+}
+.disc-container .light{
+    width:72vw;
+    position: absolute;
+    animation: circle 60s infinite linear;
+}
+.disc-container .cover{
+    width: 44.5vw;
+    position: absolute;
+    border-radius:50%;
+    animation: circle 60s infinite linear;
+}
+
+.song-description{
+
+}
+.page>.links{
+
+}
