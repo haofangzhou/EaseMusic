@@ -17,52 +17,78 @@
 }
 
 
-.page{
-    display: flex;
-    flex-direction:column;
+.page{display: flex;
+    flex-direction:column; 
     height: 100vh;
-    background:transparent url(../img/jzw-bg.jpg);
-    background-size: cover;
-}
+    background:transparent url(../img/jzw-bg.jpg); background-size: cover;}
 
-.disc-container{
-    position: relative
+.disc-container{position: relative}
+.disc-container .pointer{width:24vw; position: absolute; left: 45vw; z-index: 99;}
+.disc-container .disc{display: flex;  justify-content: center; align-items: center;margin-top:18vw;}
+.disc-container .ring{width:72vw;}
+.disc-container .light{ width:72vw; position: absolute;}
+.disc-container .cover{ width: 44.5vw; position: absolute;border-radius:50%; }
 
-}
-.disc-container .pointer{
-    width:24vw;
-    position: absolute;
-    left: 45vw;
-    z-index: 99;
-}
-.disc-container .disc{
-    display: flex;
-    /* 弹性盒子元素将向行中间位置对齐*/
-    justify-content: center;
-    /* align-items 属性定义flex子项在flex容器的当前行的侧轴（纵轴）方向上的对齐方式  
-    居中对齐弹性盒的各项 <div> 元素： */
-    align-items: center;
-    margin-top:18vw;
-}
-
-.disc-container .ring{
-    width:72vw;
-}
-.disc-container .light{
-    width:72vw;
-    position: absolute;
+.playing .light,
+.playing .cover{
     animation: circle 60s infinite linear;
 }
-.disc-container .cover{
-    width: 44.5vw;
-    position: absolute;
-    border-radius:50%;
-    animation: circle 60s infinite linear;
-}
+
+
+
+
 
 .song-description{
-
+    /* flex-grow
+    当父元素的宽度大于他的所有子元素的的宽度总和的时候，才会生效；
+    默认是0，表明自己不参与索取，剩下的空间和它没有关系；
+    不为flex:0 的元素将瓜分剩下的元素，瓜分的大小，是其flex-grow的值占所有flex-grow的值的比例； */
+    flex-grow: 1;
+    color:#AEABAC;
+    text-align: center;
+    line-height:2;
+    margin-top: 20px;
 }
-.page>.links{
-
+.song-description h1{
+    font-size: 18px;
+    color:white;
+}
+.song-description p{
+    font-size: 14px;
+    line-height: 24px;
+}
+.song-description p:active{
+    font-size: 14px;
+    color:white;
+}
+.song-description .lyric{
+    height: 72px;
+    overflow: hidden;
+    /* border: 1px solid red; */
+}
+.links{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    color: #D43B32;
+    margin-bottom: 10px;
+    
+}
+.links a{
+   width: 38.5vw;
+    margin: 1em;
+   text-align: center;
+   border: 1px solid #D43B32;
+   text-decoration: none;
+   background: transparent;
+   padding: 1.5vw;
+   color:inherit;
+   border-radius: 2vw;
+   letter-spacing: 1vw;
+   
+}
+a.main{ 
+    background: #D43B32;
+    color: white;    
 }
