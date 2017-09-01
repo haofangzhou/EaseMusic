@@ -17,13 +17,40 @@
 }
 
 
-.page{display: flex;
+.page{
+    display: flex;
     flex-direction:column; 
     height: 100vh;
-    background:transparent url(../img/jzw-bg.jpg); background-size: cover;}
+    background:transparent url(../img/jzw-bg.jpg);
+    background-size: cover;
+}
 
-.disc-container{position: relative}
-.disc-container .pointer{width:24vw; position: absolute; left: 45vw; z-index: 99;}
+.disc-container{position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.disc-container .icon{
+    width: 10vw;
+    fill:white;
+}
+/* .disc-container.icon{position:absolute;z-index:2;fill:white} */
+.iconWrap{
+    position: absolute;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    height: 15vw;
+    width: 15vw;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.5);
+    overflow: hidden
+}
+.disc-container .pointer{width:24vw; position: absolute; left: 45vw; z-index: 1;}
 .disc-container .disc{display: flex;  justify-content: center; align-items: center;margin-top:18vw;}
 .disc-container .ring{width:72vw;}
 .disc-container .light{ width:72vw; position: absolute;}
@@ -32,8 +59,17 @@
 .playing .light,
 .playing .cover{
     animation: circle 60s infinite linear;
+    display: block;
 }
-
+.pause{
+    display: none;
+}
+.playing .play{
+    display: none;
+}
+.playing .pause{
+    display: block;
+}
 
 
 
